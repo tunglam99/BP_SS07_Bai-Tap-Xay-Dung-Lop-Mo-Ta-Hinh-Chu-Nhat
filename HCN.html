@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="hcn"></p>
+<p id="hcn1"></p>
+<script>
+    let Rectangle =function(dai, rong) {
+        this.dai = dai;
+        this.rong = rong;
+
+
+        this.getDai = function () {
+            return this.dai;
+        };
+        this.setDai = function (dai) {
+            this.dai = dai;
+        };
+
+        this.getRong = function () {
+            return this.rong;
+        };
+        this.setRong = function (rong) {
+            this.rong = rong;
+        };
+
+
+        this.getDienTich = function () {
+            return this.dai * this.rong;
+        };
+
+        this.getChuVi = function () {
+            return (this.dai + this.rong) * 2;
+        }
+    }
+
+    let rectangle = new Rectangle(500,700);
+    let dai = rectangle.getDai();
+    let rong = rectangle.getRong();
+    let dienTich = rectangle.getDienTich();
+    let chuVi = rectangle.getChuVi();
+
+    let canvas = "<canvas height='"+ dai +"'  width='"+rong+"' style='border:2px solid #000000;' ></canvas>";
+    document.write("dien tich HCN la: " + dienTich + " ;chu vi hinh chu nhat la: " + chuVi + "<br>");
+    document.getElementById("hcn").innerHTML = canvas;
+
+    rectangle.setDai(200);
+    rectangle.setRong(300);
+    dai = rectangle.getDai();
+    rong = rectangle.getRong();
+    dienTich = rectangle.getDienTich();
+    chuVi = rectangle.getChuVi();
+
+    let canvas1 = "<canvas height='"+dai+"' width='"+rong+"'style='border: 1px solid #000000;'></canvas>";
+    document.getElementById("hcn1").innerHTML = canvas1;
+    document.write("dien tich hcn1 la: " + dienTich + " ;chu vi hcn1 la: " + chuVi);
+</script>
+</body>
+</html>
